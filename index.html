@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honeypot Integration</title>
+    <script>
+        function logClick() {
+            fetch('/log_click', {
+                method: 'POST',
+            }).then(response => {
+                if (response.ok) {
+                    alert("Click logged!");
+                } else {
+                    alert("Failed to log the click.");
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Honeypot Status</h1>
+    <p>Honeypot is running in the background!</p>
+    <button onclick="logClick()">Click Me</button>
+</body>
+</html>
